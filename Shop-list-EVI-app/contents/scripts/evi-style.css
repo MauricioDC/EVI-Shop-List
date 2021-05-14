@@ -1,0 +1,7 @@
+header{
+    display: table;
+    height: 50px;
+    width: 50%;
+    padding: 5px;
+    background-color: aqua;
+}
