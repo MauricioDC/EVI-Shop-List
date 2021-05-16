@@ -3,7 +3,7 @@
 /* Primary resets */
 body {
     margin: 0px;
-    background-color: aqua;
+    background-color:  #0D80FF;
 }   
 h1 {
     margin: 0px;
@@ -12,9 +12,10 @@ h1 {
 div.head-main {
     height: 60px;
     width: 33.3%;
-    background-color: #0CAEE8;
+    background-color: #ffffff;
     margin-left: 33.3%;
     padding-top: 50px;
+    margin-top: 15px;
 }
 header {
     display: table;
