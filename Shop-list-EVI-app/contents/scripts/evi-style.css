@@ -3,6 +3,7 @@
 /* Primary resets */
 body {
     margin: 0px;
+    background-color: aqua;
 }   
 h1 {
     margin: 0px;
@@ -11,9 +12,9 @@ h1 {
 div.head-main {
     height: 60px;
     width: 33.3%;
-    padding: 15px;
     background-color: #0CAEE8;
     margin-left: 33.3%;
+    padding-top: 50px;
 }
 header {
     display: table;
@@ -28,11 +29,9 @@ header {
     box-align: center;
 }
 div.content-main {  
-    display: box;
-    height: 50px;
+    height: 500px;
     width: 33.3%;
-    background-color: #c6e1ff;
-    color: #0DFF76;
+    background-color: #ffffff;
     margin-left: 33.3%;
     position: absolute;
     z-index: -1; /* layer position under header*/
