@@ -1,11 +1,42 @@
-header{
+@charset "UTF-8";
+
+/* Primary resets */
+body {
+    margin: 0px;
+}   
+h1 {
+    margin: 0px;
+}
+/*///////////////////////////////////*/
+div.head-main {
+    height: 60px;
+    width: 33.3%;
+    padding: 15px;
+    background-color: #0CAEE8;
+    margin-left: 33.3%;
+}
+header {
     display: table;
     height: 50px;
     width: 33.3%;
-    padding-right: 20px;
-    background-color: rgb(16, 146, 146);
-    color: rgb(25, 209, 163);
-    font-family: Arial, Helvetica, sans-serif;
-    float: right;
-    text-align: right;
+    background-color: #0D80FF;
+    color: #0DFF76;
+    font-family: 'Major Mono Display', Helvetica, monospace, 'Montserrat', sans-serif, 'Open Sans', sans-serif, 'Poppins', sans-serif;
+    margin-left: 33.3%;
+    text-align: center;
+    box-shadow: 10px 10px 0px #0DFF76;
+    box-align: center;
 }
+div.content-main {  
+    display: box;
+    height: 50px;
+    width: 33.3%;
+    background-color: #c6e1ff;
+    color: #0DFF76;
+    margin-left: 33.3%;
+    position: absolute;
+    z-index: -1; /* layer position under header*/
+}
+
+
+
