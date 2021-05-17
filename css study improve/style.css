@@ -7,14 +7,20 @@ h1{margin:0px;padding:0px;}
     background-color: grey;
     height: 300px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: row; 
+    /*colunas e linhas*/
+    flex-wrap: nowrap; 
+    /* quebra de linha */
+    flex-flow: row nowrap; 
+    /* flex-direction+flex-wrap */
+    justify-content: flex-end;
+    /* justificar conteudo, direita(end) e esquerda(start) */
 }
 .articles{
     height: 100px;
     margin: 5px;
     padding: 20px;
-    width: 33.3%;
+    width: 70px;
 }
 .article_01{
     background-color: palegreen;
