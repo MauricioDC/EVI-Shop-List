@@ -9,12 +9,14 @@ h1{margin:0px;padding:0px;}
     display: flex;
     flex-direction: row; 
     /*colunas e linhas*/
+    /* row= linhas colum= colunas +reverse para inverter a ordem */
     flex-wrap: nowrap; 
     /* quebra de linha */
     flex-flow: row nowrap; 
     /* flex-direction+flex-wrap */
-    justify-content: flex-end;
-    /* justificar conteudo, direita(end) e esquerda(start) */
+    justify-content: flex-start;
+    /* justificar conteudo, direita(end) e esquerda(start) e outros como between e around*/
+    
 }
 .articles{
     height: 100px;
