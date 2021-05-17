@@ -36,5 +36,12 @@ div.content-main {
     z-index: -1; /* layer position under header*/
 }
 
+.p_main{
+    padding-top: 45px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
 
 
