@@ -7,12 +7,14 @@ h1{margin:0px;padding:0px;}
     background-color: grey;
     height: 300px;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .articles{
     height: 100px;
-    width: 33.3%;
     margin: 5px;
+    padding: 20px;
+    width: 33.3%;
 }
 .article_01{
     background-color: palegreen;
