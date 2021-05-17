@@ -14,17 +14,18 @@ div.head-main {
     width: 98%;
     background-color: #ffffff;
     margin-left: 1%;
+    margin-right: 1%;
     padding-top: 50px;
     margin-top: 15px;
 }
 header {
     display: table;
     height: 50px;
-    width: 98%;
+    width: 60px;
     background-color: #0D80FF;
     color: #0DFF76;
     font-family: 'Major Mono Display', Helvetica, monospace, 'Montserrat', sans-serif, 'Open Sans', sans-serif, 'Poppins', sans-serif;
-    margin-left: 1%;
+    margin-left: 50px;
     text-align: center;
     box-shadow: 10px 10px 0px #0DFF76;
     box-align: center;
