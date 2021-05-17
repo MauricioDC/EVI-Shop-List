@@ -12,6 +12,7 @@ h1{margin:0px;padding:0px;}
 .articles{
     height: 100px;
     width: 33.3%;
+    margin: 5px;
 }
 .article_01{
     background-color: palegreen;
