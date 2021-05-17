@@ -11,7 +11,7 @@ h1 {
 /*///////////////////////////////////*/
 div.head-main {
     position: absolute;
-    height: 15%;
+    height: 100px;
     width: 100%;
     background-color: #ED254E;  
 }
@@ -28,7 +28,7 @@ header {
     box-shadow: 10px 10px 0px #0DFF76;
 }
 div.content-main {  
-    top: 15%;
+    top: 100px;
     height: 85%;
     width: 100%;
     background-color: #ffffff;
@@ -37,7 +37,7 @@ div.content-main {
 }
 
 .p_main{
-    padding-top: 45px;
+    padding-top: 100px;
     padding-left: 25px;
     padding-right: 25px;
     font-family: 'Montserrat', sans-serif;
