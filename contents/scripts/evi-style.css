@@ -3,20 +3,17 @@
 /* Primary resets */
 body {
     margin: 0px;
-    background-color:  #0D80FF;
 }   
+
 h1 {
     margin: 0px;
 }
 /*///////////////////////////////////*/
 div.head-main {
-    height: 60px;
-    width: 98%;
-    background-color: #ffffff;
-    margin-left: 1%;
-    margin-right: 1%;
-    padding-top: 50px;
-    margin-top: 15px;
+    position: absolute;
+    height: 15%;
+    width: 100%;
+    background-color: #ED254E;  
 }
 header {
     display: table;
@@ -26,15 +23,15 @@ header {
     color: #0DFF76;
     font-family: 'Major Mono Display', Helvetica, monospace, 'Montserrat', sans-serif, 'Open Sans', sans-serif, 'Poppins', sans-serif;
     margin-left: 50px;
+    margin-top: 45px;
     text-align: center;
     box-shadow: 10px 10px 0px #0DFF76;
-    box-align: center;
 }
 div.content-main {  
-    height: 500px;
-    width: 98%;
+    top: 15%;
+    height: 85%;
+    width: 100%;
     background-color: #ffffff;
-    margin-left: 1%;
     position: absolute;
     z-index: -1; /* layer position under header*/
 }
