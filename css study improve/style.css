@@ -1,0 +1,24 @@
+@charset "UTF-8";
+body{margin:0px;padding:0px;}
+h1{margin:0px;padding:0px;}
+
+.container{
+    margin: 5px;
+    background-color: grey;
+    height: 300px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.articles{
+    height: 100px;
+    width: 33.3%;
+}
+.article_01{
+    background-color: palegreen;
+}
+.article_02{
+    background-color: tomato;
+}
+.article_03{
+    background-color: blueviolet;
+}
