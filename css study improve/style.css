@@ -5,24 +5,31 @@ h1{margin:0px;padding:0px;}
 .container{
     margin: 5px;
     background-color: grey;
-    height: 300px;
+    height: 780px;
     display: flex;
+    
     flex-direction: row; 
     /*colunas e linhas*/
     /* row= linhas colum= colunas +reverse para inverter a ordem */
     flex-wrap: nowrap; 
     /* quebra de linha */
-    flex-flow: row nowrap; 
+    flex-flow: row wrap; 
     /* flex-direction+flex-wrap */
-    justify-content: flex-start;
-    /* justificar conteudo, direita(end) e esquerda(start) e outros como between e around*/
-    
+
+    justify-content: stretch;
+    /* justificar conteudo, direita(end) e esquerda(start) e outros como between e around *//* <<< ou alinhado horizontalmente */
+    align-items: flex-start;
+    /* justificar conteudo, cima(start) baixo(end) baseline(com base no conteudo interno */ /* <<< ou alinhado verticalmente */
+    align-content: space-around;
+    /* semelhane ao align ou justify com a diferença de alinhar os itens de forma agrupada */
+ 
+
 }
 .articles{
-    height: 100px;
     margin: 5px;
     padding: 20px;
-    width: 70px;
+    width: 80px;
+    height: 80px
 }
 .article_01{
     background-color: palegreen;
