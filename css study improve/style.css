@@ -16,11 +16,11 @@ h1{margin:0px;padding:0px;}
     flex-flow: row wrap; 
     /* flex-direction+flex-wrap */
 
-    justify-content: stretch;
+    justify-content: flex-end;
     /* justificar conteudo, direita(end) e esquerda(start) e outros como between e around *//* <<< ou alinhado horizontalmente */
-    align-items: flex-start;
+    align-items: flex-end;
     /* justificar conteudo, cima(start) baixo(end) baseline(com base no conteudo interno */ /* <<< ou alinhado verticalmente */
-    align-content: space-around;
+    align-content: flex-end;
     /* semelhane ao align ou justify com a diferença de alinhar os itens de forma agrupada */
  
 
