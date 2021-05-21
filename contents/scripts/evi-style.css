@@ -34,6 +34,8 @@ div.content-main {
     background-color: #ffffff;
     position: absolute;
     z-index: -1; /* layer position under header*/
+    padding-top: 75px;
+    padding: 75px 15px 15px 15px;
 }
 
 .p_main{
