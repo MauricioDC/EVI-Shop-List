@@ -38,6 +38,21 @@ div.content-main {
     padding: 75px 15px 15px 15px;
 }
 
+input[type=button]{
+    color: white;
+    margin-left: 5px;
+    text-decoration: noone;
+    box-shadow: 3px 3px 0px #0DFF76;
+    background-color: #0D80FF;
+    border: 1px;
+}
+input[type=number]{
+    width: 40px;
+}
+input[type=text]
+{
+    width: 70%;
+}
 .p_main{
     padding-top: 100px;
     padding-left: 25px;
