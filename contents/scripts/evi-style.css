@@ -28,30 +28,34 @@ header {
     box-shadow: 10px 10px 0px #0DFF76;
 }
 div.content-main {  
+    display: flex;
     top: 100px;
     height: 85%;
-    width: 100%;
     background-color: #ffffff;
-    position: absolute;
+    position: relative;
     z-index: -1; /* layer position under header*/
-    padding-top: 75px;
-    padding: 75px 15px 15px 15px;
+    padding: 75px 15px 15px 15px;    
 }
-
+#add-list-bar{
+    display: flex;
+    width: 100%;
+}
 input[type=button]{
     color: white;
-    margin-left: 5px;
+    margin: 0px 8px;
     text-decoration: noone;
     box-shadow: 3px 3px 0px #0DFF76;
     background-color: #0D80FF;
     border: 1px;
+    height: 40px;
+    font-size: 20px;
 }
 input[type=number]{
-    width: 40px;
+    width: 40px; 
 }
 input[type=text]
 {
-    width: 70%;
+    width: 100%;
 }
 .p_main{
     padding-top: 100px;
