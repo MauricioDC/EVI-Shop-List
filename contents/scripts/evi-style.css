@@ -49,6 +49,7 @@ input[type=button]{
     border: 1px;
     height: 40px;
     font-size: 20px;
+    font-weight: bold;
 }
 input[type=number]{
     width: 40px; 
