@@ -50,13 +50,14 @@ input[type=button]{
     height: 40px;
     font-size: 20px;
     font-weight: bold;
+    width: 10%;
 }
 input[type=number]{
-    width: 40px; 
+    width: 20%; 
 }
 input[type=text]
 {
-    width: 100%;
+    width: 70%;
 }
 .p_main{
     padding-top: 100px;
