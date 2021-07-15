@@ -1,46 +1,24 @@
-let Produto = function(){
-    let nomeProduto
-    let qtdProduto
-    this.setNome = function(_nomeProduto){
-        this.nomeProduto = _nomeProduto
+class Produto {
+    constructor(nomeProduto, qtdProduto) {
+        this.nomeProduto = nomeProduto;
+        this.qtdProduto = qtdProduto;
     }
-    this.setQtd = function(_qtdProduto){
-        this.qtdProduto = _qtdProduto
-    }
-    
 }
 
 let nmProd = document.getElementById("itemLista")
 let qtdProd = document.getElementById("qtdProduto")
 let lista = []
-let tabCriada = false
 
-function criarTabela (){
-    let hNome = document.createElement("th")
-    let hQtd = document.createElement("th")
-    let tabela = document.createElement("table")
-    let head = document.createElement("thead")
-    let body = document.createElement("tbody")
-    let lNome = document.createElement("td")
-    let lQtd = document.createElement("td")
-
-    if(tabCriada == true){
-        lNome.innerHTML = produto.nmProd
-        lQtd.innerHTML = produo.qtdProd
-        hNome.appendChild(lNome)
-        hQtd.appendChild(lQtd)
-    } else {
-        hNome.innerHTML = "Nome"
-        hQtd.innerHTML = "Quantidade"
-        tabela.appendChild(head)
-        tabela.appendChild(body)
-        tabela.appendChild(hNome)
-        tabela.appendChild(hQtd)
-        tabela.id = "tabelaLista"
-        tabCriada = true
-        
-        document.getElementById("lista").appendChild(tabela)
-    } 
+function montarLista(produto) {
+        let tBody = document.querySelector("tbody")
+        let qtd = document.createElement("td")
+        let nome = document.createElement("td")
+        let linha = document.createElement("tr")
+        nome.innerHTML = produto.nomeProduto
+        qtd.innerHTML =  produto.qtdProduto
+        linha.appendChild(nome)
+        linha.appendChild(qtd)
+        tBody.appendChild(linha)
 }
 
 function addProduto() {
@@ -53,14 +31,13 @@ function addProduto() {
         window.alert("Favor informar a quantidade!")
         qtdProd.focus()
     } else {
-        let produto = new Produto()
-        produto.setNome(nmProd.value)
-        produto.setQtd(qtdProd.value)
+        let produto = new Produto(nmProd.value, qtdProd.value)
         lista.push(produto)
         nmProd.value = ""
         qtdProd.value = ""
+        console.log(JSON.stringify(produto))
         nmProd.focus()
-        criarTabela()
+        montarLista(produto)
     }
 
 }
