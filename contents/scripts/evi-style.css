@@ -26,15 +26,16 @@ header {
     margin-top: 45px;
     text-align: center;
     box-shadow: 10px 10px 0px #0DFF76;
+    position: relative;
+    z-index: 1;
 }
-div.content-main {  
+.content-main {  
     display: flex;
     top: 100px;
     height: 85%;
     background-color: #ffffff;
     position: relative;
-    z-index: -1; /* layer position under header*/
-    padding: 75px 15px 15px 15px;    
+    padding: 75px 15px 15px 15px;  
 }
 #add-list-bar{
     display: flex;
@@ -65,13 +66,23 @@ input[type=text]
     padding-right: 25px;
     font-family: 'Montserrat', sans-serif;
 }
-table{
+#exibeLista{
+    margin-top: 105px;
     width: 100%;
     border-collapse: collapse;
     text-align: center;
+    margin-left: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
-th, td{
-    border: 1px solid grey;
+td{
+    border: 1px solid rgb(187, 187, 187);
+}
+th {
+    background-color: #0D80FF;
+    color: white;
+    padding: 5px;
+    width: inherit;
 }
 
 
