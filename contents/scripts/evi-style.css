@@ -75,8 +75,14 @@ input[type=text]
     font-family: Arial, Helvetica, sans-serif;
 
 }
-th, td{
-    border: 1px solid grey;
+td{
+    border: 1px solid rgb(187, 187, 187);
+}
+th {
+    background-color: #0D80FF;
+    color: white;
+    padding: 5px;
+    width: inherit;
 }
 
 
