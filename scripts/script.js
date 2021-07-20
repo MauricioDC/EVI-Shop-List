@@ -14,6 +14,7 @@ function montarLista(produto) {
         let qtd = document.createElement("td")
         let nome = document.createElement("td")
         let linha = document.createElement("tr")
+        let remover = document.createElement("button")
         nome.innerHTML = produto.nomeProduto
         qtd.innerHTML =  produto.qtdProduto
         linha.appendChild(nome)
