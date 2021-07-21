@@ -80,9 +80,22 @@ td{
 }
 th {
     background-color: #0D80FF;
+    box-shadow: 1px 1px 0px #0DFF76;
     color: white;
     padding: 5px;
     width: inherit;
+}
+button{
+    color: white;
+    margin: 0px 8px;
+    text-decoration: noone;
+    box-shadow: 2px 2px 0px #0DFF76;
+    background-color: #0D80FF;
+    border: 1px;
+    height: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 20px;
 }
 
 
