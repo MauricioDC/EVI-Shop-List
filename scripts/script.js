@@ -9,6 +9,14 @@ let nmProd = document.getElementById("itemLista")
 let qtdProd = document.getElementById("qtdProduto")
 let lista = []
 
+document.getElementById("qtdProduto")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("buttonADC").click();
+    }
+});
+
 function montarLista(produto) {
         let tBody = document.querySelector("tbody")
         let qtd = document.createElement("td")
