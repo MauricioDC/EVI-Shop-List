@@ -8,6 +8,7 @@ class Produto {
 let nmProd = document.getElementById("itemLista")
 let qtdProd = document.getElementById("qtdProduto")
 let lista = []
+var contador = 0
 
 document.getElementById("qtdProduto")
     .addEventListener("keyup", function (event) {
@@ -26,32 +27,31 @@ function montarLista(produto) {
     let linha = document.createElement("tr")
     let qMenosB = document.createElement("button")
     let qMaisB = document.createElement("button")
+    let linhaN = document.createElement("td")
 
+    linha.setAttribute("id", contador); contador++
     nome.innerHTML = produto.nomeProduto.toUpperCase()
     qtd.innerHTML = produto.qtdProduto
     qMenosB.innerText = "-"
     qMaisB.innerText = "+"
-    qMaisB.addEventListener("click", function (e) {
-        produto.qtdProduto = parseInt(produto.qtdProduto) + 1
-        qtd.innerHTML = produto.qtdProduto
-    })
-
+    linhaN.innerText = contador
     qMenosB.addEventListener("click", function (e) {
         if (produto.qtdProduto <= 1) {
-            let confirm = window.confirm("Deseja remover o iten?")
-            if (confirm === true) {
-                let linha = document.querySelector("tr")
-               let tbody = document.querySelector("tbody")
-               tbody.deleteRow(linha);
-            }
-        } else {
+            qMenosB.disabled = true
+        } else if(produto.qtdProduto >= 1){
+            qMenosB.disabled = false
             produto.qtdProduto = parseInt(produto.qtdProduto) - 1
             qtd.innerHTML = produto.qtdProduto
         }
 
     })
+    qMaisB.addEventListener("click", function (e) {
+        produto.qtdProduto = parseInt(produto.qtdProduto) + 1
+        qtd.innerHTML = produto.qtdProduto
+    })
     qMenosL.appendChild(qMenosB)
     qMaisL.appendChild(qMaisB)
+    linha.appendChild(linhaN)
     linha.appendChild(nome)
     linha.appendChild(qtd)
     linha.appendChild(qMaisL)
@@ -77,4 +77,8 @@ function addProduto() {
         montarLista(produto)
     }
 
+}
+
+function removeRow(r) {
+    document.querySelector("tbody").deleteRow(r)
 }
