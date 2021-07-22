@@ -37,9 +37,8 @@ function montarLista(produto) {
     linhaN.innerText = contador
     qMenosB.addEventListener("click", function (e) {
         if (produto.qtdProduto <= 1) {
-            qMenosB.disabled = true
+            //Aplicar a função para deletar linha
         } else if(produto.qtdProduto >= 1){
-            qMenosB.disabled = false
             produto.qtdProduto = parseInt(produto.qtdProduto) - 1
             qtd.innerHTML = produto.qtdProduto
         }
@@ -64,10 +63,12 @@ function addProduto() {
     if (nmProd.value.length == 0) {
         window.alert("Favor informar o nome do produto!")
         nmProd.focus()
+        //@Caio nesse trecho que você vai criar a função para tornar a borda vermelha.
     }
     else if (qtdProd.value == 0 || qtdProd.value < 0) {
         window.alert("Favor informar a quantidade!")
         qtdProd.focus()
+        //@Caio nesse trecho que você vai criar a função para tornar a borda vermelha.
     } else {
         let produto = new Produto(nmProd.value, qtdProd.value)
         lista.push(produto)
