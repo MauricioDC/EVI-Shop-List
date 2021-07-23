@@ -37,7 +37,7 @@ function montarLista(produto) {
     linhaN.innerText = contador
     qMenosB.addEventListener("click", function (e) {
         if (produto.qtdProduto <= 1) {
-            //Aplicar a função para deletar linha
+            removeRow(this.id)
         } else if(produto.qtdProduto >= 1){
             produto.qtdProduto = parseInt(produto.qtdProduto) - 1
             qtd.innerHTML = produto.qtdProduto
@@ -63,6 +63,7 @@ function addProduto() {
     if (nmProd.value.length == 0) {
         window.alert("Favor informar o nome do produto!")
         nmProd.focus()
+        //nmProd.style.border = "3px solid red"
         //@Caio nesse trecho que você vai criar a função para tornar a borda vermelha.
     }
     else if (qtdProd.value == 0 || qtdProd.value < 0) {
