@@ -63,7 +63,7 @@ function addProduto() {
     if (nmProd.value.length == 0) {
         window.alert("Favor informar o nome do produto!")
         nmProd.focus()
-        //nmProd.style.border = "3px solid red"
+        nmProd.style.border = "2px solid red"
         //@Caio nesse trecho que você vai criar a função para tornar a borda vermelha.
     }
     else if (qtdProd.value == 0 || qtdProd.value < 0) {

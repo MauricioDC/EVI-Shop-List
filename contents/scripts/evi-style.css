@@ -60,6 +60,11 @@ input[type=text]
 {
     width: 70%;
 }
+input:focus {
+    box-shadow: 1 1 1 1;
+    border: 1 none;
+    outline: 0;
+} 
 .p_main{
     padding-top: 100px;
     padding-left: 25px;
