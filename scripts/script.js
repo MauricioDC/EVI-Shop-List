@@ -40,12 +40,16 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
     qMenosB.addEventListener("click", function (e) { //Adicionando uma função de escuta ao botao de menos para adicionar a funcionalidade de -> 
         //-> diminuir a quantidade e futuramente deletar o item se o valor for inferior a 1.
         if (produto.qtdProduto <= 1) { //Condicional para avaliar se o produto está com a quantidade igual ou menor que um.
-            removeRow(this.id) //Chamada da função que deletaria o item, porem precisa ser ajustada.
+            removeRow(linha.getAttribute("this.id")); //Chamada da função que deletaria o item, porem precisa ser ajustada.
         } else { //Caso a condição acima não seja atendida o botão apenas decrementa a quantidade.
             produto.qtdProduto = parseInt(produto.qtdProduto) - 1 //Atribuindo ao objeto produto o atributo qtdProduto com o valor decrementado.
             qtd.innerHTML = produto.qtdProduto //Atribuindo ao elemento HTML o valor da variavel qtdProduto.
         }
 
+        let listaVazia = document.querySelector("tbody").children.length //Criando uma variavel para armazenar quantos "filhos" tem o body.
+        if (listaVazia >= 0) { //caso o valor seja menor ou igual a zero indicando que a lista está vazia o contador das linhas zera.
+            contador = 0
+        }
     })
     qMaisB.addEventListener("click", function (e) {//Mesma função descrita acima porem incrementando a quantidade.
         produto.qtdProduto = parseInt(produto.qtdProduto) + 1
@@ -88,3 +92,4 @@ function removeRow(r) { //Função criada para deletar a linha da tabela criada 
     document.querySelector("tbody").deleteRow(r) //Recuperando o elemento do corpo da tabela, utilizando o metodo deleteRow para deletar -> 
     // -> a linha passando como parametro a linha recebida.
 }
+
