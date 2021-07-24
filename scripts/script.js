@@ -8,7 +8,7 @@ class Produto { //Criando uma classe para produto.
 let nmProd = document.getElementById("itemLista") //Armazenando o elemento HTML input text em uma variavel para manipular no javascript.
 let qtdProd = document.getElementById("qtdProduto") //Armazenando o elemento HTML input number em uma variavel para manipular no javascript.
 let lista = [] //Criando um Vetor para armazenar a lista, penso em futuramente utilizar ele para enviar dados ao banco.
-var contador = 1 //Contador criado para atribuir um ID sequencial as linhas da tabela que guarda a lista de compra.
+var contador = 0 //Contador criado para atribuir um ID sequencial as linhas da tabela que guarda a lista de compra.
 var itensNaLista = 0 //Variavel para validar quantos itens existe na lista.
 
 document.getElementById("qtdProduto") //Função criada para ser acionada ao preencher a quantidade e pressionar a tecla ENTER.
@@ -37,11 +37,11 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
     qtd.innerHTML = produto.qtdProduto //Mesmo procedimento com o valor da variavel qtdProduto.
     qMenosB.innerText = "-" //Atribuindo um texto ao botão de menos criado acima.
     qMaisB.innerText = "+" //Atribuindo um texto ao botão de mais criado acima.
-    linhaN.innerText = contador //Atribuindo o valor do contador a coluna que ira exibilo.
+    linhaN.innerText = contador - 1 //Atribuindo o valor do contador a coluna que ira exibilo.
     qMenosB.addEventListener("click", function (e) { //Adicionando uma função de escuta ao botao de menos para adicionar a funcionalidade de -> 
         //-> diminuir a quantidade e futuramente deletar o item se o valor for inferior a 1.
         if (produto.qtdProduto <= 1) { //Condicional para avaliar se o produto está com a quantidade igual ou menor que um.
-            qMenosB.setAttribute("onclick", "removeRow(this.id)") //Chamada da função que deletaria o item, porem precisa ser ajustada.
+            //Chamada da função que deletaria o item, porem precisa ser ajustada.
             itensNaLista = itensNaLista - 1 //Cada produto removido é retirado um da variavel itensNaLista.
         } else { //Caso a condição acima não seja atendida o botão apenas decrementa a quantidade.
             produto.qtdProduto = parseInt(produto.qtdProduto) - 1 //Atribuindo ao objeto produto o atributo qtdProduto com o valor decrementado.
@@ -85,12 +85,6 @@ function addProduto() { //Função para adicionar o objeto do produto a lista, f
         itensNaLista = itensNaLista + 1 //Cada produto adicionado é somado 1 a variavel itensNaLista.
     }
 
-}
-
-function delProduto() { //Função criada para deletar a linha da tabela criada acima.
-    let r = window.prompt("Digite o numero do produto que deseja deletar")
-    document.querySelector("tbody").deleteRow(r) //Recuperando o elemento do corpo da tabela, utilizando o metodo deleteRow para deletar -> 
-    // -> a linha passando como parametro a linha recebida.
 }
 
 function listaVazia() { //Função para validar se a lista está vazia.
