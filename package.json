@@ -4,7 +4,8 @@
   "description": "Estudos relacionados a criação de listas,\r  Hello world!",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "dev": "nodemon views/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,14 @@
   },
   "homepage": "https://github.com/MauricioDC/EVI-Shop-List#readme",
   "devDependencies": {
-    "jasmine": "^3.8.0"
+    "jasmine": "^3.8.0",
+    "nodemon": "^2.0.12"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^4.0.1",
+    "mongose": "0.0.2-security"
   }
 }
