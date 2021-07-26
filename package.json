@@ -18,5 +18,8 @@
   "homepage": "https://github.com/MauricioDC/EVI-Shop-List#readme",
   "devDependencies": {
     "jasmine": "^3.8.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
