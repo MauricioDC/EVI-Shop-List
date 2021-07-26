@@ -1,9 +1,9 @@
 class Produto { //Criando uma classe para produto.
     constructor(nomeProduto, qtdProduto, idProduto) {
-       //Construtor da Classe que recebe um parametro nome e um quantidade.
+        //Construtor da Classe que recebe um parametro nome e um quantidade.
         this.nomeProduto = nomeProduto;
         this.qtdProduto = qtdProduto;
-        this.idProduto = idProduto; 
+        this.idProduto = idProduto;
     }
 }
 
@@ -45,8 +45,11 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
 
     qMenosB.addEventListener("click", function (e) {//Mesma função descrita acima porem incrementando a quantidade.
         if (produto.qtdProduto <= 1) { //Condicional para avaliar se o produto está com a quantidade igual ou menor que um.
-            removeProduto(produto.idProduto)//Chamada da função com o parametro para exclusão.
-            itensNaLista = itensNaLista - 1 //Cada produto removido é retirado um da variavel itensNaLista.
+            let confirmDel = window.confirm("Você deseja remover o produto?")//Chamando uma janela para confirmar a ação do usuário.
+            if (confirmDel === true) {//Caso positiva o produto é deletado.
+                removeProduto(produto.idProduto)//Chamada da função com o parametro para exclusão.
+                itensNaLista = itensNaLista - 1 //Cada produto removido é retirado um da variavel itensNaLista.
+            }
         } else { //Caso a condição acima não seja atendida o botão apenas decrementa a quantidade.
             produto.qtdProduto = parseInt(produto.qtdProduto) - 1 //Atribuindo ao objeto produto o atributo qtdProduto com o valor decrementado.
             qtd.innerHTML = produto.qtdProduto //Atribuindo ao elemento HTML o valor da variavel qtdProduto.
@@ -69,7 +72,6 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
 
 
 }
-
 
 function addProduto() { //Função para adicionar o objeto do produto a lista, função criada acima.
 
@@ -97,7 +99,7 @@ function addProduto() { //Função para adicionar o objeto do produto a lista, f
 
 }
 
-function removeProduto(index){//Função criada para remover o item caso a quantidade seja um e o botão de menos seja pressionado
+function removeProduto(index) {//Função criada para remover o item caso a quantidade seja um e o botão de menos seja pressionado
     document.getElementById("linha-" + index).remove(); //Pesquisando o elemento a ser deletado, com o parametro passado na chamada da função.
 }
 
