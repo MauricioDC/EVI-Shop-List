@@ -52,7 +52,6 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
     linha.appendChild(qMaisL)//Adicionando a coluna do elemento button a linha.
     linha.appendChild(qMenosL)// ----------------------------------------------------------------
     tBody.appendChild(linha)//Adicionando a linha ao elemento tbody corpo da tabela.
-
 }
 function removeProduto(index) {
 
