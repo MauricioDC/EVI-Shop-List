@@ -67,7 +67,8 @@ input:focus {
 } 
 #exibeLista{
     display: flex;
-    padding: 105px 15px 15px 15px; 
+    position: relative;
+    padding: 105px 0px 0px 0px; 
     width: 100%;
     border-collapse: collapse;
     text-align: center;
@@ -75,7 +76,7 @@ input:focus {
 
 }
 #lista{
-    width: 720px;
+    width: 100%;
 }
 td{
     border: 1px solid rgb(187, 187, 187);
