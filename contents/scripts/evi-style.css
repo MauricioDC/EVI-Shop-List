@@ -65,31 +65,29 @@ input:focus {
     border: 1 none;
     outline: 0;
 } 
-.p_main{
-    padding-top: 100px;
-    padding-left: 25px;
-    padding-right: 25px;
-    font-family: 'Montserrat', sans-serif;
-}
 #exibeLista{
-    margin-top: 105px;
+    display: flex;
+    padding: 105px 15px 15px 15px; 
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    margin-left: 15px;
     font-family: Arial, Helvetica, sans-serif;
 
 }
+#lista{
+    width: 720px;
+}
 td{
     border: 1px solid rgb(187, 187, 187);
+
 }
 th {
     background-color: #0D80FF;
     box-shadow: 1px 1px 0px #0DFF76;
     color: white;
     padding: 5px;
-    width: inherit;
 }
+/*
 button{
     color: white;
     margin: 0px 8px;
@@ -102,3 +100,6 @@ button{
     font-weight: bold;
     width: 20px;
 }
+*/
+
+
