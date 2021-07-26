@@ -30,7 +30,8 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
     let qMaisB = document.createElement("button")//--------------------------------------------------------
     let linhaN = document.createElement("td")//Criando um elemento HTML td que é uma coluna para receber o mesmo contador que é utilizado para gerar o ID e exibilo na tela.
 
-    linha.setAttribute("id", contador); contador++ //Recuperando a variavel linha criada acima e setando um novo atributo a ela, o id, ->
+
+    linha.setAttribute("id", "linha-" + contador); contador++ //Recuperando a variavel linha criada acima e setando um novo atributo a ela, o id, ->
     // -> recebendo o contador como valor e incrementando o mesmo no fim.
     nome.innerHTML = produto.nomeProduto.toUpperCase() //Pegando o valor que está na variavel nomeProduto pertencente a classe produto e atribuindo a variavel ->
     // -> nome criada acima, no seu innerHTML, seu corpo de exibição, utilizando o metodo toUpperCase para deixar o texto digitado todo em maiusculo.
@@ -38,17 +39,7 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
     qMenosB.innerText = "-" //Atribuindo um texto ao botão de menos criado acima.
     qMaisB.innerText = "+" //Atribuindo um texto ao botão de mais criado acima.
     linhaN.innerText = contador - 1 //Atribuindo o valor do contador a coluna que ira exibilo.
-    qMenosB.addEventListener("click", function (e) { //Adicionando uma função de escuta ao botao de menos para adicionar a funcionalidade de -> 
-        //-> diminuir a quantidade e futuramente deletar o item se o valor for inferior a 1.
-        if (produto.qtdProduto <= 1) { //Condicional para avaliar se o produto está com a quantidade igual ou menor que um.
-            //Chamada da função que deletaria o item, porem precisa ser ajustada.
-            itensNaLista = itensNaLista - 1 //Cada produto removido é retirado um da variavel itensNaLista.
-        } else { //Caso a condição acima não seja atendida o botão apenas decrementa a quantidade.
-            produto.qtdProduto = parseInt(produto.qtdProduto) - 1 //Atribuindo ao objeto produto o atributo qtdProduto com o valor decrementado.
-            qtd.innerHTML = produto.qtdProduto //Atribuindo ao elemento HTML o valor da variavel qtdProduto.
-        }
-        listaVazia()
-    })
+    qMenosB.setAttribute("onclick", "removeProduto(this.id);")
     qMaisB.addEventListener("click", function (e) {//Mesma função descrita acima porem incrementando a quantidade.
         produto.qtdProduto = parseInt(produto.qtdProduto) + 1
         qtd.innerHTML = produto.qtdProduto
@@ -61,6 +52,18 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
     linha.appendChild(qMaisL)//Adicionando a coluna do elemento button a linha.
     linha.appendChild(qMenosL)// ----------------------------------------------------------------
     tBody.appendChild(linha)//Adicionando a linha ao elemento tbody corpo da tabela.
+
+}
+function removeProduto(index) {
+
+    if (qtd <= 1) { //Condicional para avaliar se o produto está com a quantidade igual ou menor que um.
+        document.getElementById("linha-" + index).remove();
+        itensNaLista = itensNaLista - 1 //Cada produto removido é retirado um da variavel itensNaLista.
+    } else { //Caso a condição acima não seja atendida o botão apenas decrementa a quantidade.
+        produto.qtdProduto = parseInt(produto.qtdProduto) - 1 //Atribuindo ao objeto produto o atributo qtdProduto com o valor decrementado.
+        qtd.innerHTML = produto.qtdProduto //Atribuindo ao elemento HTML o valor da variavel qtdProduto.
+    }
+    listaVazia()
 }
 
 function addProduto() { //Função para adicionar o objeto do produto a lista, função criada acima.
