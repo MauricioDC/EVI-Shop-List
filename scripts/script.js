@@ -1,7 +1,9 @@
 class Produto { //Criando uma classe para produto.
-    constructor(nomeProduto, qtdProduto) { //Construtor da Classe que recebe um parametro nome e um quantidade.
+    constructor(nomeProduto, qtdProduto, idProduto) {
+       //Construtor da Classe que recebe um parametro nome e um quantidade.
         this.nomeProduto = nomeProduto;
         this.qtdProduto = qtdProduto;
+        this.idProduto = idProduto; 
     }
 }
 
@@ -10,6 +12,7 @@ let qtdProd = document.getElementById("qtdProduto") //Armazenando o elemento HTM
 let lista = [] //Criando um Vetor para armazenar a lista, penso em futuramente utilizar ele para enviar dados ao banco.
 var contador = 0 //Contador criado para atribuir um ID sequencial as linhas da tabela que guarda a lista de compra.
 var itensNaLista = 0 //Variavel para validar quantos itens existe na lista.
+let contIdProd = 0
 
 document.getElementById("qtdProduto") //Função criada para ser acionada ao preencher a quantidade e pressionar a tecla ENTER.
     .addEventListener("keyup", function (event) { //Ela adiciona uma escuta ao input number;
@@ -38,8 +41,19 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
     qtd.innerHTML = produto.qtdProduto //Mesmo procedimento com o valor da variavel qtdProduto.
     qMenosB.innerText = "-" //Atribuindo um texto ao botão de menos criado acima.
     qMaisB.innerText = "+" //Atribuindo um texto ao botão de mais criado acima.
-    linhaN.innerText = contador - 1 //Atribuindo o valor do contador a coluna que ira exibilo.
-    qMenosB.setAttribute("onclick", "removeProduto(this.id);")
+    linhaN.innerText = contador //Atribuindo o valor do contador a coluna que ira exibilo.
+
+    qMenosB.addEventListener("click", function (e) {//Mesma função descrita acima porem incrementando a quantidade.
+        if (produto.qtdProduto <= 1) { //Condicional para avaliar se o produto está com a quantidade igual ou menor que um.
+            removeProduto(produto.idProduto)//Chamada da função com o parametro para exclusão.
+            itensNaLista = itensNaLista - 1 //Cada produto removido é retirado um da variavel itensNaLista.
+        } else { //Caso a condição acima não seja atendida o botão apenas decrementa a quantidade.
+            produto.qtdProduto = parseInt(produto.qtdProduto) - 1 //Atribuindo ao objeto produto o atributo qtdProduto com o valor decrementado.
+            qtd.innerHTML = produto.qtdProduto //Atribuindo ao elemento HTML o valor da variavel qtdProduto.
+        }
+        listaVazia()
+
+    })
     qMaisB.addEventListener("click", function (e) {//Mesma função descrita acima porem incrementando a quantidade.
         produto.qtdProduto = parseInt(produto.qtdProduto) + 1
         qtd.innerHTML = produto.qtdProduto
@@ -52,18 +66,10 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
     linha.appendChild(qMaisL)//Adicionando a coluna do elemento button a linha.
     linha.appendChild(qMenosL)// ----------------------------------------------------------------
     tBody.appendChild(linha)//Adicionando a linha ao elemento tbody corpo da tabela.
-}
-function removeProduto(index) {
 
-    if (qtd <= 1) { //Condicional para avaliar se o produto está com a quantidade igual ou menor que um.
-        document.getElementById("linha-" + index).remove();
-        itensNaLista = itensNaLista - 1 //Cada produto removido é retirado um da variavel itensNaLista.
-    } else { //Caso a condição acima não seja atendida o botão apenas decrementa a quantidade.
-        produto.qtdProduto = parseInt(produto.qtdProduto) - 1 //Atribuindo ao objeto produto o atributo qtdProduto com o valor decrementado.
-        qtd.innerHTML = produto.qtdProduto //Atribuindo ao elemento HTML o valor da variavel qtdProduto.
-    }
-    listaVazia()
+
 }
+
 
 function addProduto() { //Função para adicionar o objeto do produto a lista, função criada acima.
 
@@ -78,8 +84,10 @@ function addProduto() { //Função para adicionar o objeto do produto a lista, f
         qtdProd.focus()
         //@Caio nesse trecho que você vai criar a função para tornar a borda vermelha.
     } else { //Caso não entre em nenhum dos laços acima o produto sera instanciado.
-        let produto = new Produto(nmProd.value, qtdProd.value) //Instanciando o produto, passando a ele o valor do elemento HTML input text e input number como parametro.
+        let produto = new Produto(nmProd.value, qtdProd.value, contIdProd) //Instanciando o produto, passando a ele o valor do elemento HTML input text e input number como parametro.
+        contIdProd++
         lista.push(produto)//Adicionando o produto ao vetor.
+        console.log(produto)
         nmProd.value = "" //Deixando o campo limpo.
         qtdProd.value = ""//----------------------------------------------------------------
         nmProd.focus()//Setando foco no campo.
@@ -89,8 +97,13 @@ function addProduto() { //Função para adicionar o objeto do produto a lista, f
 
 }
 
+function removeProduto(index){//Função criada para remover o item caso a quantidade seja um e o botão de menos seja pressionado
+    document.getElementById("linha-" + index).remove(); //Pesquisando o elemento a ser deletado, com o parametro passado na chamada da função.
+}
+
 function listaVazia() { //Função para validar se a lista está vazia.
     if (itensNaLista >= 0) { //caso o valor seja menor ou igual a zero indicando que a lista está vazia o contador das linhas zera.
         contador = 0
+        contIdProd = 0
     }
 }
