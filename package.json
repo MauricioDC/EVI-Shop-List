@@ -20,6 +20,7 @@
     "jasmine": "^3.8.0"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node": "^16.5.0"
   }
 }
