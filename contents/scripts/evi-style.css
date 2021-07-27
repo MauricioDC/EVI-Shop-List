@@ -67,8 +67,8 @@ input:focus {
 } 
 #exibeLista{
     display: flex;
+    margin-top: 105px;
     position: relative;
-    padding: 105px 0px 0px 0px; 
     width: 100%;
     border-collapse: collapse;
     text-align: center;
