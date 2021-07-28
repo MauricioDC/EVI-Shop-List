@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/* Primary resets */
+body {
+    margin: 0px;
+}   
+
+h1 {
+    margin: 0px;
+}
+/*///////////////////////////////////*/
+div.head-main {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    background-color: #ED254E;  
+}
+header {
+    display: table;
+    height: 50px;
+    width: 60px;
+    background-color: #0D80FF;
+    color: #0DFF76;
+    font-family: 'Major Mono Display', Helvetica, monospace, 'Montserrat', sans-serif, 'Open Sans', sans-serif, 'Poppins', sans-serif;
+    margin-left: 50px;
+    margin-top: 45px;
+    text-align: center;
+    box-shadow: 10px 10px 0px #0DFF76;
+    position: relative;
+    z-index: 1;
+}
+.content-main {  
+    display: flex;
+    top: 100px;
+    height: 85%;
+    background-color: #ffffff;
+    position: relative;
+    padding: 75px 15px 15px 15px;  
+}
+#add-list-bar{
+    display: flex;
+    width: 100%;
+}
+input[type=button]{
+    color: white;
+    margin: 0px 8px;
+    text-decoration: noone;
+    box-shadow: 3px 3px 0px #0DFF76;
+    background-color: #0D80FF;
+    border: 1px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 10%;
+}
+input[type=number]{
+    width: 20%; 
+}
+input[type=text]
+{
+    width: 70%;
+}
+input:focus {
+    box-shadow: 1 1 1 1;
+    border: 1 none;
+    outline: 0;
+} 
+#exibeLista{
+    display: flex;
+    position: relative;
+    padding: 105px 0px 0px 0px; 
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#lista{
+    width: 100%;
+}
+td{
+    border: 1px solid rgb(187, 187, 187);
+
+}
+th {
+    background-color: #0D80FF;
+    box-shadow: 1px 1px 0px #0DFF76;
+    color: white;
+    padding: 5px;
+}
+/*
+button{
+    color: white;
+    margin: 0px 8px;
+    text-decoration: noone;
+    box-shadow: 2px 2px 0px #0DFF76;
+    background-color: #0D80FF;
+    border: 1px;
+    height: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 20px;
+}
+*/
+
+

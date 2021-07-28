@@ -65,8 +65,8 @@ function montarLista(produto) { //Função criada para montar e exibir a lista d
     qMaisL.appendChild(qMaisB)//--------------------------------------------------------
     linha.appendChild(linhaN)//Adicionando a coluna do contador a linha.
     linha.appendChild(nome)//Adicionando a coluna do nome a linha.
-    linha.appendChild(qtd) //Adicionando a coluna da quantidade a linha.
     linha.appendChild(qMaisL)//Adicionando a coluna do elemento button a linha.
+    linha.appendChild(qtd) //Adicionando a coluna da quantidade a linha.
     linha.appendChild(qMenosL)// ----------------------------------------------------------------
     tBody.appendChild(linha)//Adicionando a linha ao elemento tbody corpo da tabela.
 
