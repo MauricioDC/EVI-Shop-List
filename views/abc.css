@@ -44,7 +44,7 @@ header {
 input[type=button]{
     color: white;
     margin: 0px 8px;
-    text-decoration: none;
+    text-decoration: noone;
     box-shadow: 3px 3px 0px #0DFF76;
     background-color: #0D80FF;
     border: 1px;
@@ -65,31 +65,30 @@ input:focus {
     border: 1 none;
     outline: 0;
 } 
-.p_main{
-    padding-top: 100px;
-    padding-left: 25px;
-    padding-right: 25px;
-    font-family: 'Montserrat', sans-serif;
-}
 #exibeLista{
+    display: flex;
     margin-top: 105px;
+    position: relative;
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    margin-left: 15px;
     font-family: Arial, Helvetica, sans-serif;
 
 }
+#lista{
+    width: 100%;
+}
 td{
     border: 1px solid rgb(187, 187, 187);
+
 }
 th {
     background-color: #0D80FF;
     box-shadow: 1px 1px 0px #0DFF76;
     color: white;
     padding: 5px;
-    width: inherit;
 }
+/*
 button{
     color: white;
     margin: 0px 8px;
@@ -102,3 +101,6 @@ button{
     font-weight: bold;
     width: 20px;
 }
+*/
+
+
