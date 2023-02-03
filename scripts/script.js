@@ -3,7 +3,7 @@ class Produto {
         this.nome = nome;
         this.qtd = qtd;
     }
-}
+    }
 
 let inputNome = document.getElementById("itemLista");
 let inputQtd = document.getElementById("qtdProduto");
